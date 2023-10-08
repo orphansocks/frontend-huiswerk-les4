@@ -14,18 +14,313 @@
 
 /* ------------------------------- 1. Global Styles -------------------------------- */
 
+/*CSS RESET*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*FONTS*/
+/*ROBOTO*/ /*MERRIWEATHER*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@100;200; 300;400;500&display=swap');
+
+
+/*COLORS*/
+:root {
+    --paars: #5722CD;
+    --blauw: #4845E4;
+    --roze: #ED4385;
+    --zwart: #0C0C0C;
+    --wit: #ffffff;
+    --lichtpaars: #F2F0FF;
+    --lichtgrijs: #F3F6F9;
+    --grijs: #7A7A7A;
+    --default-margin: 16px;
+}
+
 /* ------------------------------- 2. Typography ----------------------------------- */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size:15px;
+}
+h1, h2, h3, h4, h5 {
+    font-family: 'Merriweather', serif;
+
+}
+
+h1 {
+    font-size:36px;
+
+}
+
+h2 {
+    font-size:24px;
+    line-height: 1.6;
+    font-weight:400;
+}
+
+h3 {
+    font-size:21px;
+    line-height: 1.6;
+    font-weight:400;
+    color: var(--paars);
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--zwart);
+
+}
+
+a {
+    color: var(--blauw);
+}
+
+a:link {
+    color: var(--blauw);
+}
+
+a:visited {
+    color: var(--blauw);
+}
+
 
 /* ------------------------------- 3. Layout --------------------------------------- */
 
-/* --------------- 3.1 Reusables ----------------------- */
+img {
+    width: 100%;
+}
 
-/* --------------- 3.2 Other --------------------------- */
 
-/* ------------------------------- 4. Areas ---------------------------------------- */
+/* --------------- 3.1 Reuseables ----------------------- */
+.outer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
-/* --------------- 4.1 Header ------------------------- */
+.inner-container {
+    flex-basis: 1000px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+}
 
-/* --------------- 4.2 Introduction ------------------- */
+    /* --------------- 3.2 Buttons --------------------------- */
+
+.hero-button {
+    border: 0;
+    line-height: 2.5;
+    padding: 5px 30px;
+    font-size: 0.8rem;
+    text-align: center;
+    text-transform:uppercase;
+    color: var(--wit);
+    border-radius: 50px;
+    background-color: var(--roze);
+    margin-top: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    outline: none;
+}
+
+.hero-button:hover {
+    background-color: var(--roze);
+}
+
+.hero-button:active {
+    box-shadow:
+            inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+            inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------------- 4. Areas --------------------------- */
+
+/* ---------------- 4.1 Navbar ------------------------- */
+.nav-bar {
+    background-color: var(--blauw);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.menu-items{
+    flex-basis: 600px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow:0;
+    flex-shrink: 1;
+}
+
+li {
+    color: var(--lichtpaars);
+    list-style:none;
+    text-transform:capitalize;
+    font-size: 1.2rem;
+    font-weight:200;
+}
+
+/* --------------- 4.1 Header-section ------------------------- */
+
+.hero-section {
+    background-color: var(--blauw);
+}
+
+.hero-container {
+    padding: 120px;
+    color: var(--wit);
+    text-align:center;
+}
+
+.hero-container p {
+    font-size:1.2rem;
+    font-weight: 100;
+    text-align:center;
+    color: var(--wit);
+    margin-top: 15px;
+}
+
+/* --------------- 4.2 Featured-text-section ------------------- */
+
+.outer-container .featured-text-section {
+    background-color: var(--wit);
+}
+
+.featured-text-container {
+    padding: 120px 0;
+}
+
+.featured-text h2 {
+    text-align: center;
+    color: var(--blauw);
+    margin-top:15px;
+}
+
+.featured-text p {
+    margin-top:20px;
+    text-align: center;
+}
+
+
+
+
+
+/* --------------- 4.3 Portfolio-section ------------------- */
+
+.portfolio-section {
+    background-color: var(--lichtpaars);
+}
+
+.portfolio-article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+}
+
+.portfolio-article:nth-child(even) {
+    display:flex;
+    flex-direction: row-reverse;
+}
+
+.portfolio-text {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 30px;
+    flex-basis: 400px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.portfolio-squiggle {
+    max-width: 60px;
+    margin:30px 0;
+}
+
+.portfolio-readmore {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin:30px 0;
+}
+
+.image-wrapper {
+    flex-basis: calc(100% - 400px);
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.portfolio-image {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+/* --------------- 4.4 Services-section ------------------- */
+
+.services-section {
+    background-color: var(--wit);
+    padding: 80px 0;
+}
+
+.inner-container__services-grid {
+    flex-basis: 1000px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 20px;
+
+}
+
+.services-article {
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--paars);
+    flex-basis: 300px;
+    padding: 40px 30px;
+    box-shadow: 10px 5px 5px var(--lichtgrijs);
+}
+
+.services-article p {
+    margin-top:15px;
+  font-weight: 200;
+}
+
+.services-article img {
+    max-width: 50px;
+    margin: 16px 0;
+}
+
+/* --------------- 4.5 Form-section ------------------- */
+
+.form-section {
+    background-color: var(--blauw);
+    padding: 80px 0;
+}
+
+
+
+/* --------------- 4.3 Footer-section ------------------- */
+
+.footer-section {
+    background-color: var(--zwart);
+    padding: 20px;
+}
+
+.footer-section p {
+    color: var(--lichtgrijs);
+    text-align: center;
+}
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
